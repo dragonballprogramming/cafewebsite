@@ -29,7 +29,7 @@ Bootstrap(app)
 my_api_key = os.environ.get('MY_API_KEY')
 api_requests = os.environ.get('API_REQUESTS')
 
-# 'https://cape-api-kyle.herokuapp.com/'
+
 header = {
     "Content-Type": "application/x-www-form-urlencoded",
     "Connection": "Keep-Alive",
