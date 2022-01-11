@@ -1,0 +1,54 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<title>Coffee and Wifi</title>
+
+<body>
+	<div class="jumbotron top-title">
+		<div class="container">
+			<h1 class="display-4"><img src="static/img/coffee-cup-background change.png" class="coffee-img"> Coffee & Wifi 💻</h1>
+			<p class="lead">Want to work in a cafe but need power and wifi?</p>
+			<hr class="my-4">
+			<p>You've found the right place! Checkout my collection of cafes with data on power socket availability, wifi speed and coffee quality.</p>
+		</div>
+	</div>
+	<div class="box-t">
+		<h1 class="box-t-heading">Cafes</h1>
+	</div>
+	<div class="box-t">
+{% for row in all_cafes %}
+
+		<table class="table">
+			<tr>
+				<td>Cafe: {{ row['name'] }} | </td>
+				<td>Location: {{ row['location'] }} | </td>
+				<td>Coffee Price: {{ row['coffee_price'] }} | </td>
+				<td>Wifi?: {{ row['has_wifi'] }} | </td>
+				<td>Plugins?: {{ row['has_socket'] }} | </td>
+				<td>Bathrooms?: {{ row['has_toilet'] }} | </td>
+				<td><a href="{{ row['map_url'] }}">Cafe Link</a></td>
+			</tr>
+			<hr>
+		</table>
+
+{% endfor %}
+	</div>
+	<div class="flex-container">
+		<div class="flex-child add-cafe">
+			<h1>Add A Cafe</h1>
+			{{ wtf.quick_form(form, novalidate=True) }}
+		</div>
+		<div class="flex-child coffee-pic">
+			<img src="static/img/coffee-cup-background change.png" height="80%" width="80%">
+		</div>
+		
+	</div>
+ 	
+
+</body>
+{% include "footer.html" %}
+</html>

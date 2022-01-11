@@ -1,0 +1,67 @@
+body {
+    background-image: url('/static/img/beans-img.jpeg');
+    background-color: #8E806A;
+}
+
+hr {
+    background-color: #C3794E;
+    color: #C3794E;
+    border-color: transparent;
+    height: 3px;
+}
+
+.top-title {
+    text-align: center;
+    padding: 25px;
+    margin: 5% 10%;
+    background-color: #FFE6BC;
+}
+
+.coffee-img {
+    height: 40px;
+    width: 40px;
+}
+
+.box-t-heading {
+    background-color: #FFE6BC;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.box-t {
+    background-color: #FFE6BC;
+    margin: 2% 10%;
+    text-align: center;
+}
+
+.hr-cafes {
+    width: 95%;
+}
+
+.add-cafe {
+    background-color: #FFE6BC;
+    margin: 2% 10%;
+    text-align: left;
+    padding: 2%;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}
+
+.flex-child:first-child {
+    margin-right: 100px;
+}
+
+.coffee-pic {
+    margin: 4% 10%;
+}
+
+.footer {
+    color: white;
+    text-align: center;
+}
