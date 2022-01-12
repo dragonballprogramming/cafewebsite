@@ -23,11 +23,11 @@ class NewCafeForm(FlaskForm):
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('MY_SECRET_KEY')
 Bootstrap(app)
 
 my_api_key = os.environ.get('MY_API_KEY')
-api_requests = os.environ.get('API_REQUESTS')
+api_requests = os.environ.get('api_requests')
 
 
 header = {
@@ -41,6 +41,7 @@ header = {
 def home():
     form = NewCafeForm()
     cafes = requests.get(f"{api_requests}/all")
+    print(cafes)
     json_cafe = cafes.json()
     if form.validate_on_submit():
         # create new record
