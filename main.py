@@ -56,7 +56,7 @@ def home():
             'has_sockets': request.form.get('has_socket'),
             'can_take_calls': request.form.get('can_take_calls'),
             'coffee_price': request.form.get('coffee_price'),
-            'key': my_api_key,
+            'key': "3S689lF9aQCIxO",
         }
         print(new_cafe)
         new_post = requests.post(f"{api_requests}/add", json=new_cafe, headers=header)
